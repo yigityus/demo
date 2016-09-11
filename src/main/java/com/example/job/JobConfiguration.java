@@ -50,7 +50,7 @@ public class JobConfiguration {
 	@Bean
 	public Step step1() {
 		return stepBuilderFactory.get("step1").tasklet((stepContribution, chunkContext) -> {
-            log.info("TEST");
+            log.info("TEST " + stepContribution.getExitStatus());
             return RepeatStatus.FINISHED;
         }).build();
 	}
