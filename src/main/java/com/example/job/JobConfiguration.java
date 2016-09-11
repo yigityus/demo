@@ -51,6 +51,7 @@ public class JobConfiguration {
 	public Step step1() {
 		return stepBuilderFactory.get("step1").tasklet((stepContribution, chunkContext) -> {
             log.info("TEST " + stepContribution.getExitStatus());
+            log.info("TEST " + stepContribution.getReadCount());
             return RepeatStatus.FINISHED;
         }).build();
 	}
